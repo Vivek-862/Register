@@ -5,6 +5,7 @@ import cors from "cors";
 const app=express()
 import connectDB from "./db.js";
 import authRouter from "./routes/authRouter.js"
+import productRouter from "./routes/productRouter.js"
 
 
 dotenv.config()
@@ -12,6 +13,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.use("/auth",authRouter)
+app.use("/products",productRouter)
 
 const PORT =process.env.PORT || 8080;
 
